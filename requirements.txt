@@ -6,3 +6,4 @@ llama-index-llms-openai==0.2.7
 llama-index-postprocessor-cohere-rerank==0.2.0
 llama-index-graph-stores-kuzu==0.3.2
 llama-index-vector-stores-lancedb==0.2.2
+python-dotenv==1.0.1
