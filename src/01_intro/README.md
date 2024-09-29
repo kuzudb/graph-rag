@@ -1,4 +1,4 @@
-# Introduction to Graph RAG and Hybrid RAG
+# Introduction to Graph RAG
 
 In this intro notebook, we will build a simple vector + graph RAG pipeline using the following stack:
 
