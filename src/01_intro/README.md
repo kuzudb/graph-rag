@@ -1,6 +1,6 @@
 # Introduction to Graph RAG and Hybrid RAG
 
-In this intro notebook, we will build a simple hybrid RAG pipeline using the following stack:
+In this intro notebook, we will build a simple vector + graph RAG pipeline using the following stack:
 
 - Graph database: Kùzu
 - Vector database: LanceDB
