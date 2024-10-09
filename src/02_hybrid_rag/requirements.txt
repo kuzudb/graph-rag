@@ -1,0 +1,10 @@
+kuzu==0.6.0
+lancedb==0.13.0
+llama-index==0.11.16
+llama-index-embeddings-openai==0.2.5
+llama-index-llms-openai==0.2.12
+llama-index-postprocessor-cohere-rerank==0.2.1
+llama-index-graph-stores-kuzu==0.3.2
+llama-index-vector-stores-lancedb==0.2.4
+python-dotenv==1.0.1
+ell-ai==0.0.13
