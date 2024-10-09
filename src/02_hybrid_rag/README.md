@@ -48,3 +48,15 @@ ipython kernel install --user --name=rag_env
 
 Locate the new kernel in the list of kernels in Jupyter and select it to begin installing packages
 and running the notebooks.
+
+## Steps
+
+1. First, run the `preprocess.py` script to preprocess the text and rewrite the input text using a simpler sentence structure.
+This will help the LLM extract better nodes and relationships in the next step.
+
+```bash
+python preprocess.py
+```
+
+2. Next, run the notebook `hybrid_rag.ipynb` to construct the graph and run the retrieval and generation pipeline.
+Inspect the results at the end of the notebook to see the effect of the reranker in combining the results from the vector store and the graph store.
