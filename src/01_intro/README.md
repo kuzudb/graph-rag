@@ -19,7 +19,7 @@ and passing them as context to the generation model can help improve the quality
 either retrieval method would otherwise fail (due to insufficient semantic similarity in the vector
 space, or due to an incomplete graph).
 
-# Setup
+## Setup
 
 We will be using the Python API of Kùzu and testing out ideas using Jupyter notebooks
 or Python scripts along with other dependencies. You can manage dependencies using
