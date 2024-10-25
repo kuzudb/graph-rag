@@ -1,0 +1,8 @@
+Amelia Brand,John Brand,daughter_of
+John Brand,Amelia Brand,father_of
+Joseph Cooper,Murphy Cooper,father_of
+Joseph Cooper,Tom Cooper,father_of
+Murphy Cooper,Joseph Cooper,daughter_of
+Murphy Cooper,Tom Cooper,sister_of
+Tom Cooper,Joseph Cooper,son_of
+Tom Cooper,Murphy Cooper,brother_of
