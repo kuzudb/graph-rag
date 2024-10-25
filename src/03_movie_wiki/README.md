@@ -12,6 +12,25 @@ Cypher queries, which are then executed against the graph database (Graph RAG).
 on their relevance to the question.
 - The combined context is passed to an LLM to formulate responses in natural language.
 
+The following stack is used:
+
+- Graph database: Kùzu
+- Vector database: LanceDB
+- Text preprocessing prompting framework: [ell](https://docs.ell.so/), a language model prompting framework
+- Embedding model: OpenAI `text-embedding-3-small`
+- Generation model: OpenAI `gpt-4o-mini`
+- Reranking: Cohere reranker
+
+### Key takeaways
+
+Unlike the earlier example, in this case, the same data isn't present in the vector DB and the graph
+DB. Instead, the vector DB is used to store chunk vectors of the unstructured text, and the graph DB
+is used to store the structured dataset.
+
+The results from the hybrid RAG script (post reranking) show that even in this scenario, where the
+two retrievals retrieve from potentially non-overlapping data sources, the combination after reranking
+captures the results better than either kind of retrieval alone.
+
 ## Setup
 
 You can use the `uv` package manager to install the required dependencies:
