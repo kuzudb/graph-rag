@@ -65,6 +65,16 @@ docker compose up
 docker compose down
 ```
 
+Run the following command to display the graph.
+
+```cypher
+MATCH (a)-[r]->(b)
+RETURN *
+LIMIT 100
+```
+
+![](./img/movie-graph.png)
+
 ## Running the scripts
 
 ### Create the graph
