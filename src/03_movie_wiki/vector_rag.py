@@ -63,4 +63,8 @@ if __name__ == "__main__":
 
     question = "What is Tom Cooper's character known for in Interstellar? Which actor played him?"
     response = vector_rag.run(question)
-    print(f"---\nQ5: {question}\n\n{response}\n---\n")
+    print(f"---\nQ5: {question}\n\n{response}")
+
+    question = "Which movies did Jessica Chastain act in that were directed by Christopher Nolan?"
+    response = vector_rag.run(question)
+    print(f"---\nQ6: {question}\n\n{response}")

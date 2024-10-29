@@ -161,12 +161,16 @@ if __name__ == "__main__":
     response = graph_rag.run(question)
     print(f"---\nQ3: {question}\n\n{response}")
 
-    # The next two questions are well answered by graph search.
+    # The next three questions are well answered by graph search.
     question = "Who wrote the movie Interstellar?"
     response = graph_rag.run(question)
     print(f"---\nQ4: {question}\n\n{response}")
 
     question = "What is Tom Cooper's character known for in Interstellar? Which actor played him?"
     response = graph_rag.run(question)
-    print(f"---\nQ5: {question}\n\n{response}\n---\n")
+    print(f"---\nQ5: {question}\n\n{response}")
+
+    question = "Which movies did Jessica Chastain act in that were directed by Christopher Nolan?"
+    response = graph_rag.run(question)
+    print(f"---\nQ6: {question}\n\n{response}")
 
