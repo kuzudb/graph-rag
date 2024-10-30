@@ -9,17 +9,19 @@ db = kuzu.Database("test_kuzudb")
 conn = kuzu.Connection(db)
 
 # Define schema
-conn.execute("CREATE NODE TABLE Actor(name STRING, age INT64, PRIMARY KEY(name))")
-conn.execute("CREATE NODE TABLE Movie(title STRING, year INT64, PRIMARY KEY(title))")
-conn.execute("CREATE NODE TABLE Director(name STRING, age INT64, PRIMARY KEY(name))")
-conn.execute("CREATE NODE TABLE Character(name STRING, description STRING, PRIMARY KEY(name))")
-conn.execute("CREATE NODE TABLE Writer(name STRING, age INT64, PRIMARY KEY(name))")
-conn.execute("CREATE REL TABLE ACTED_IN(FROM Actor TO Movie)")
-conn.execute("CREATE REL TABLE PLAYED(FROM Actor TO Character)")
-conn.execute("CREATE REL TABLE DIRECTED(FROM Director TO Movie)")
-conn.execute("CREATE REL TABLE PLAYED_ROLE_IN(FROM Character TO Movie)")
-conn.execute("CREATE REL TABLE RELATED_TO(FROM Character TO Character, relationship STRING)")
-conn.execute("CREATE REL TABLE WROTE(FROM Writer TO Movie)")
+conn.execute("""
+    CREATE NODE TABLE IF NOT EXISTS Actor(name STRING, age INT64, PRIMARY KEY(name));
+    CREATE NODE TABLE IF NOT EXISTS Movie(title STRING, year INT64, PRIMARY KEY(title));
+    CREATE NODE TABLE IF NOT EXISTS Director(name STRING, age INT64, PRIMARY KEY(name));
+    CREATE NODE TABLE IF NOT EXISTS Character(name STRING, description STRING, PRIMARY KEY(name));
+    CREATE NODE TABLE IF NOT EXISTS Writer(name STRING, age INT64, PRIMARY KEY(name));
+    CREATE REL TABLE IF NOT EXISTS ACTED_IN(FROM Actor TO Movie);
+    CREATE REL TABLE IF NOT EXISTS PLAYED(FROM Actor TO Character);
+    CREATE REL TABLE IF NOT EXISTS DIRECTED(FROM Director TO Movie);
+    CREATE REL TABLE IF NOT EXISTS PLAYED_ROLE_IN(FROM Character TO Movie);
+    CREATE REL TABLE IF NOT EXISTS RELATED_TO(FROM Character TO Character, relationship STRING);
+    CREATE REL TABLE IF NOT EXISTS WROTE(FROM Writer TO Movie);
+""")
 
 # Ingest data
 base_path = "../../data/interstellar"

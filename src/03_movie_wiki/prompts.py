@@ -1,3 +1,5 @@
+# --- RAG ---
+
 RAG_SYSTEM_PROMPT = """
 You are an AI assistant using Retrieval-Augmented Generation (RAG).
 RAG enhances your responses by retrieving relevant information from a knowledge base.
@@ -6,21 +8,12 @@ Do not make up an answer. If you don't know the answer, say so clearly.
 Always strive to provide concise, helpful, and context-aware answers.
 """
 
-CYPHER_SYSTEM_PROMPT = """
-You are an expert in translating natural language questions into Cypher statements.
-You will be provided with a question and a graph schema.
-Use only the provided relationship types and properties in the schema to generate a Cypher statement.
-The Cypher statement could retrieve nodes, relationships, or both.
-Do not include any explanations or apologies in your responses.
-Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
-"""
-
 RAG_USER_PROMPT = """
 Given the following question and relevant context, please provide a comprehensive and accurate response:
 
 Instructions:
+Use ALL the information provided in the context to answer the question.
 For numerical answers, please provide the exact number - do not guess or estimate.
-If you don't have enough information in the provided context, do not make up an answer.
 
 Question: {question}
 
@@ -28,6 +21,17 @@ Relevant context:
 {context}
 
 Response:
+"""
+
+# --- Cypher generation ---
+
+CYPHER_SYSTEM_PROMPT = """
+You are an expert in translating natural language questions into Cypher statements.
+You will be provided with a question and a graph schema.
+Use only the provided relationship types and properties in the schema to generate a Cypher statement.
+The Cypher statement could retrieve nodes, relationships, or both.
+Do not include any explanations or apologies in your responses.
+Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
 """
 
 CYPHER_USER_PROMPT = """

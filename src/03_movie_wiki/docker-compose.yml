@@ -1,0 +1,9 @@
+services:
+  explorer:
+    image: kuzudb/explorer:latest
+    environment:
+      - MODE=READ_ONLY
+    ports:
+      - 8000:8000
+    volumes:
+      - ./test_kuzudb:/database
