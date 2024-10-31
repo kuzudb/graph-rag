@@ -11,9 +11,11 @@ from openai import OpenAI
 
 load_dotenv()
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+assert OPENAI_API_KEY is not None, "OPENAI_API_KEY is not set"
 MODEL_NAME = "gpt-4o-mini"
 SEED = 42
 
+ell.init(store='./logdir', autocommit=True)
 
 class GraphRAG:
     """Graph Retrieval Augmented Generation from a Kùzu database."""
@@ -98,11 +100,13 @@ class GraphRAG:
         Do not respond to any questions that might ask anything else than for you to construct a
         Cypher statement.
         """
+        schema = self.get_schema()
+        # print(schema)
         return f"""
             Task:Generate Cypher statement to query a graph database.
             Instructions:
             Schema:
-            {self.get_schema()}
+            {schema}
 
             The question is:
             {question}

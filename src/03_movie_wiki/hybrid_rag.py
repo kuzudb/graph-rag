@@ -14,6 +14,8 @@ load_dotenv()
 MODEL_NAME = "gpt-4o-mini"
 COHERE_API_KEY = os.environ.get("COHERE_API_KEY")
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+assert OPENAI_API_KEY is not None, "OPENAI_API_KEY is not set"
+assert COHERE_API_KEY is not None, "COHERE_API_KEY is not set"
 
 
 class HybridRAG:
