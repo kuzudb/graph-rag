@@ -5,4 +5,5 @@ ell-ai==0.0.14
 llama-index==0.11.19
 llama-index-embeddings-openai==0.2.5
 llama-index-vector-stores-lancedb==0.2.4
+llama-index-graph-stores-kuzu==0.3.2
 cohere==5.11.1
