@@ -1,7 +1,9 @@
 """
 Create a graph in Kùzu
 """
+
 import shutil
+
 import kuzu
 
 shutil.rmtree("test_kuzudb", ignore_errors=True)
@@ -55,5 +57,3 @@ res = conn.execute(
 while res.has_next():
     data = res.get_next()
     print(f"{data[0]} -> {data[1]}")
-
-

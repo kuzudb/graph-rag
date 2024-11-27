@@ -1,8 +1,8 @@
 import os
 
+import ell
 import lancedb
 from dotenv import load_dotenv
-from ell import ell
 from openai import OpenAI
 
 import prompts

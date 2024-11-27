@@ -1,13 +1,13 @@
 """
 Graph Retrieval Augmented Generation from a Kùzu database.
 """
+
 import os
 
+import ell
 import kuzu
 from dotenv import load_dotenv
-from ell import ell
 from openai import OpenAI
-
 
 load_dotenv()
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
@@ -15,7 +15,8 @@ assert OPENAI_API_KEY is not None, "OPENAI_API_KEY is not set"
 MODEL_NAME = "gpt-4o-mini"
 SEED = 42
 
-ell.init(store='./logdir', autocommit=True)
+# ell.init(store='./logdir', autocommit=True)
+
 
 class GraphRAG:
     """Graph Retrieval Augmented Generation from a Kùzu database."""
@@ -77,7 +78,7 @@ class GraphRAG:
             item = response.get_next()
             if item not in result:
                 result.extend(item)
-        
+
         # Handle both hashable and non-hashable types
         if all(isinstance(x, (str, int, float, bool, tuple)) for x in result):
             final_result = {question: list(set(result))}
@@ -177,4 +178,3 @@ if __name__ == "__main__":
     question = "Which movies did Jessica Chastain act in that were directed by Christopher Nolan?"
     response = graph_rag.run(question)
     print(f"---\nQ6: {question}\n\n{response}")
-

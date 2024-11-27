@@ -1,14 +1,13 @@
 import os
 
 import cohere
+import ell
 from dotenv import load_dotenv
-from ell import ell
 from openai import OpenAI
 
+import prompts
 from graph_rag import GraphRAG
 from vector_rag import VectorRAG
-
-import prompts
 
 load_dotenv()
 MODEL_NAME = "gpt-4o-mini"

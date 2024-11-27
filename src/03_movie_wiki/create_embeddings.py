@@ -1,6 +1,7 @@
-import openai
-import shutil
 import os
+import shutil
+
+import openai
 from dotenv import load_dotenv
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
 from llama_index.core.ingestion import IngestionPipeline
