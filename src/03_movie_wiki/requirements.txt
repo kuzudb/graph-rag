@@ -7,3 +7,5 @@ llama-index-embeddings-openai~=0.3.0
 llama-index-vector-stores-lancedb~=0.3.0
 llama-index-graph-stores-kuzu~=0.6.0
 cohere~=5.11.0
+polars==1.16.0
+pyarrow==18.1.0
