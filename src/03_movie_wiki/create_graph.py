@@ -108,7 +108,9 @@ res = conn.execute(
     """
     MATCH (m:Movie)<-[:WROTE]-(w:Writer)
     WITH m, w, array_cosine_similarity(m.vector, $query_vector) AS similarity
-    RETURN m.title AS title, m.summary AS summary, COLLECT(w.name) AS writers LIMIT 3;
+    RETURN m.title AS title, similarity, m.summary AS summary, COLLECT(w.name) AS writers
+    ORDER BY similarity DESC
+    LIMIT 3;
     """,
     parameters={"query_vector": query_vector}
 )
